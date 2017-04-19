@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>MemeMaker</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="image-container">
+		<canvas width="500px" height="500px"></canvas>
+		<div id="option"> 
+			<input type="file" id="file"/><br/>
+			<span>Top Line:</span><br/>
+			<input id="topLineText" type="text"><br />
+				<span>Bottom Line:</span><br/>
+				<input id="bottomLineText" type="text">
+			<table>
+				<tr>
+					<td>Stroke color:</td>
+					<td><input id="strokeStyle" type="text" value="black"></td>
+				</tr>
+				<tr>
+					<td>Fill color:</td>
+					<td><input id="fillStyle" type="text" value="black"></td>
+				</tr>
+			</table>
+			<button id="saveBtn">Save</button>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

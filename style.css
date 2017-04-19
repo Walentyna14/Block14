@@ -1,0 +1,15 @@
+#image-container{
+	display: flex;
+}
+
+canvas{
+	letter-spacing: 4px;
+	
+}
+#option{
+	margin: 30px; 
+}
+span{
+	font-weight: bold;
+	font-size: 20px;
+}

@@ -1,7 +1,9 @@
+var image;
+
 var main = function(){
-	prepareDOMEvents();
 	image = new Image();
 	image.src = 'tlo.png';
+	prepareDOMEvents();
 	window.topLineText = "";
 	window.bottomLineText = "";
 }

@@ -1,15 +1,20 @@
 var main = function(){
+	eventMain();
+}
+$(document).ready(main);
+
+
+var eventMain = function(){
 	$('input').change(change);
-	window.topLineText = "";
-	window.bottomLineText = "";
 	$('#file').change(handleFileSelect);
 	$('button').click(saveFile);
-	image = new Image();
 	image.onload = imageLoad;
-	image.src = 'tlo.png';
-}
+};
 
-$(document).ready(main);
+image.src = 'tlo.png';
+image = new Image();
+window.topLineText = "";
+window.bottomLineText = "";
 
 
 var imageLoad = function() {
@@ -68,7 +73,6 @@ function handleFileSelect(evt) {
 	reader.onload = function(fileObject) {
 		var data = fileObject.target.result;
 		image.src = data;
-		console.log(fileObject.target.result);
 	};
 	reader.readAsDataURL(file)
 }

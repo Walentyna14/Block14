@@ -11,8 +11,9 @@ var eventMain = function(){
 	image.onload = imageLoad;
 };
 
-image.src = 'tlo.png';
+
 image = new Image();
+image.src = 'tlo.png';
 window.topLineText = "";
 window.bottomLineText = "";
 

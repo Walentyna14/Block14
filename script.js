@@ -1,22 +1,19 @@
 var main = function(){
-	eventMain();
+	prepareDOMEvents();
+	image = new Image();
+	image.src = 'tlo.png';
+	window.topLineText = "";
+	window.bottomLineText = "";
 }
 $(document).ready(main);
 
 
-var eventMain = function(){
+var prepareDOMEvents = function(){
 	$('input').change(change);
 	$('#file').change(handleFileSelect);
 	$('button').click(saveFile);
 	image.onload = imageLoad;
 };
-
-
-image = new Image();
-image.src = 'tlo.png';
-window.topLineText = "";
-window.bottomLineText = "";
-
 
 var imageLoad = function() {
 	window.imageSrc = this;

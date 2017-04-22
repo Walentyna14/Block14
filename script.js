@@ -22,21 +22,14 @@ var imageLoad = function() {
 	redrawMeme(window.imageSrc, null, null);
 }
 
-var change = function(evt){
+var change = function(){
+	var topLineText, bottomLineText, stroke, fill;
+	topLineText = $('#topLineText').val();
+	bottomLineText = $('#bottomLineText').val();
+	stroke = $('#strokeStyle').val();
+	fill = $('#fillStyle').val();
 	
-	var id = evt.target.id;
-	var text = evt.target.value;
-	var stroke, fill;
-	
-	switch(id){
-		case 'topLineText': window.topLineText = text; break;
-		case 'bottomLineText': window.bottomLineText = text; break;
-		case 'strokeStyle': stroke = text; break;
-		case 'fillStyle': fill = text; break;
-		
-	}
-	
-	redrawMeme(window.imageSrc, window.topLineText, window.bottomLineText, stroke, fill );
+	redrawMeme(window.imageSrc, topLineText, bottomLineText, stroke, fill );
 }
 
 function redrawMeme(image, topLine, bottomLine, stroke, fill) {

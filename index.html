@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-
 <html>
-<head>
-	<title>MemeMaker</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div id="image-container">
-		<canvas width="500px" height="500px"></canvas>
-		<div id="option"> 
-			<span>Background:</span><br/>
-			<input type="file" id="file"/><br/>
-			<span>Top Line:</span><br/>
-			<input id="topLineText" type="text"><br />
-				<span>Bottom Line:</span><br/>
-				<input id="bottomLineText" type="text">
-			<table>
-				<tr>
-					<td>Stroke color:</td>
-					<td><input id="strokeStyle" type="color" value="#000000"></td>
-				</tr>
-				<tr>
-					<td>Fill color:</td>
-					<td><input id="fillStyle" type="color" value="#000000"></td>
-				</tr>
-			</table>
-			<button id="saveBtn">Save</button>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Kamila Kosmowska"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"/>
+		<title>MemeMaker</title>
+	</head>
+	<body>
+		<div id="image-container">
+			<canvas width="500px" height="500px"></canvas>
+			<div id="option"> 
+				<span>Background:</span><br/>
+				<input type="file" id="file"/><br/>
+				<span>Top Line:</span><br/>
+				<input id="topLineText" class="text" type="text"><br />
+					<span>Bottom Line:</span><br/>
+					<input id="bottomLineText" class="text" type="text">
+				<table>
+					<tr>
+						<td>Stroke color:</td>
+						<td><input id="strokeStyle" type="color" value="#000000"></td>
+					</tr>
+					<tr>
+						<td>Fill color:</td>
+						<td><input id="fillStyle" type="color" value="#000000"></td>
+					</tr>
+				</table>
+				<button id="saveBtn">Save</button>
+				<footer>© 2017 Kamila Kosmowska</footer>
+			</div>
 		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="script.js"></script>
-</body>
+		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="script.js"></script>
+	</body>
 </html>

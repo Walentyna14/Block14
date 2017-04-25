@@ -1,17 +1,18 @@
-var image;
+var image, canvas, ctx, topLineText, bottomLineText, stroke, fill;
 
 var main = function(){
 	image = new Image();
 	image.src = 'tlo.png';
 	prepareDOMEvents();
-	window.topLineText = "";
-	window.bottomLineText = "";
+	topLineText = "";
+	bottomLineText = "";
 }
 $(document).ready(main);
 
 
 var prepareDOMEvents = function(){
-	$('input').change(change);
+	$('.style').change(changeStyle);
+	$('.text').change(changeText);
 	$('#file').change(handleFileSelect);
 	$('button').click(saveFile);
 	image.onload = imageLoad;
@@ -22,15 +23,18 @@ var imageLoad = function() {
 	redrawMeme(window.imageSrc, null, null);
 }
 
-var change = function(){
-	var topLineText, bottomLineText, stroke, fill;
-	topLineText = $('#topLineText').val();
-	bottomLineText = $('#bottomLineText').val();
+var changeStyle = function(){
 	stroke = $('#strokeStyle').val();
 	fill = $('#fillStyle').val();
-	
 	redrawMeme(window.imageSrc, topLineText, bottomLineText, stroke, fill );
 }
+
+var changeText = function(){
+	topLineText = $('#topLineText').val();
+	bottomLineText = $('#bottomLineText').val();
+	redrawMeme(window.imageSrc, topLineText, bottomLineText);
+}
+
 
 function redrawMeme(image, topLine, bottomLine, stroke, fill) {
 	// Get Canvas2DContext

@@ -20,23 +20,23 @@ var prepareDOMEvents = function(){
 
 var imageLoad = function() {
 	window.imageSrc = this;
-	redrawMeme(window.imageSrc, null, null);
+	redrawMeme();
 }
 
 var changeStyle = function(){
 	stroke = $('#strokeStyle').val();
 	fill = $('#fillStyle').val();
-	redrawMeme(window.imageSrc, topLineText, bottomLineText, stroke, fill );
+	redrawMeme();
 }
 
 var changeText = function(){
 	topLineText = $('#topLineText').val();
 	bottomLineText = $('#bottomLineText').val();
-	redrawMeme(window.imageSrc, topLineText, bottomLineText);
+	redrawMeme();
 }
 
 
-function redrawMeme(image, topLine, bottomLine, stroke, fill) {
+function redrawMeme() {
 	// Get Canvas2DContext
 	var canvas = document.querySelector('canvas');
 	var ctx = canvas.getContext("2d");
@@ -49,14 +49,14 @@ function redrawMeme(image, topLine, bottomLine, stroke, fill) {
 	ctx.strokeStyle = stroke;
 	ctx.fillStyle = fill;
 	
-	if (topLine != null) {
-		ctx.fillText(topLine, canvas.width / 2, 40);
-		ctx.strokeText(topLine, canvas.width / 2, 40);
+	if (topLineText != null) {
+		ctx.fillText(topLineText, canvas.width / 2, 40);
+		ctx.strokeText(topLineText, canvas.width / 2, 40);
 	}
 	
-	if (bottomLine != null) {
-		ctx.fillText(bottomLine, canvas.width / 2, canvas.height - 20);
-		ctx.strokeText(bottomLine, canvas.width / 2, canvas.height - 20);
+	if (bottomLineText != null) {
+		ctx.fillText(bottomLineText, canvas.width / 2, canvas.height - 20);
+		ctx.strokeText(bottomLineText, canvas.width / 2, canvas.height - 20);
 	}
 }
 
